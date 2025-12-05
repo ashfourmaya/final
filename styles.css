@@ -1,25 +1,263 @@
-/* 
-      .--..--..--..--..--..--.
-    .' \  (`._   (_)     _   \
-  .'    |  '._)         (_)  |
-  \ _.')\      .----..---.   /
-  |(_.'  |    /    .-\-.  \  |
-  \     0|    |   ( O| O) | o|
-   |  _  |  .--.____.'._.-.  |
-   \ (_) | o         -` .-`  |
-    |    \   |`-._ _ _ _ _\ /
-    \    |   |  `. |_||_|   |
-    | o  |    \_      \     |     -.   .-.
-    |.-.  \     `--..-'   O |     `.`-' .'
-  _.'  .' |     `-.-'      /-.__   ' .-'
-.' `-.` '.|='=.='=.='=.='=|._/_ `-'.'
-`-._  `.  |________/\_____|    `-.'
-   .'   ).| '=' '='\/ '=' |
-   `._.`  '---------------'
-           //___\   //___\
-             ||       ||
-             ||_.-.   ||_.-.
-            (_.--__) (_.--__)
-       
+/* ------------------------------------------------------------ */
+/*  GOOGLE FONT (LOCAL)                                         */
+/* ------------------------------------------------------------ */
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/poppins-regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  src: url("fonts/poppins-600.woff2") format("woff2");
+}
 
- Insert all your glorious CSS styles below! */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background: #fff4f8;
+  color: #2a2a2a;
+}
+
+/* ------------------------------------------------------------ */
+/*  FLUID TYPE SCALE                                             */
+/* ------------------------------------------------------------ */
+html {
+  font-size: clamp(16px, 1vw + 1rem, 22px);
+}
+
+/* ------------------------------------------------------------ */
+/*  AESTHETIC COLOR PALETTE ❤️                                   */
+/* ------------------------------------------------------------ */
+/*
+Soft Pink Palette:
+#ffe6f0  (very soft pink)
+#ffcde1  (baby pink)
+#ffb5d0  (light rose)
+#ff8fb9  (medium pink)
+#ff6aa5  (brand pink)
+#ff3d8f  (hot pink accent)
+*/
+
+:root {
+  --soft-pink: #ffe6f0;
+  --pink-light: #ffcde1;
+  --pink-med: #ff8fb9;
+  --pink-brand: #ff6aa5;
+  --pink-accent: #ff3d8f;
+  --shadow-soft: rgba(255, 140, 180, 0.25);
+}
+
+/* ------------------------------------------------------------ */
+/*  NAVIGATION                                                   */
+/* ------------------------------------------------------------ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #ffb5d0, #ff8fb9);
+  color: white;
+  box-shadow: 0 4px 10px var(--shadow-soft);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding-bottom: 3px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  border-bottom: 2px solid white;
+}
+
+.logo {
+  font-size: 1.8rem;
+}
+
+/* ------------------------------------------------------------ */
+/*  HERO SECTION                                                 */
+/* ------------------------------------------------------------ */
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 3rem 2rem;
+  gap: 2rem;
+  background: linear-gradient(135deg, #ffe6f0, #ffcde1);
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  color: var(--pink-brand);
+}
+
+.hero-btn {
+  background: var(--pink-brand);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow-soft);
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background: var(--pink-accent);
+  transform: translateY(-3px);
+}
+
+.hero-img {
+  width: 45%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow-soft);
+}
+
+/* ------------------------------------------------------------ */
+/*  FEATURES GRID                                                */
+/* ------------------------------------------------------------ */
+.features-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 3rem;
+}
+
+.feature {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow-soft);
+  border: 2px solid #ffd1e2;
+  transition: 0.3s;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+/* ------------------------------------------------------------ */
+/*  BROWSE + RENT/BUY ITEM GRID                                  */
+/* ------------------------------------------------------------ */
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.item-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px var(--shadow-soft);
+  border: 2px solid #ffd1e2;
+  transition: 0.3s;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+}
+
+.item-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.7rem;
+}
+
+/* Rent/Buy buttons */
+.rentbuy-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.rent-btn,
+.buy-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 12px var(--shadow-soft);
+  transition: 0.3s;
+}
+
+.rent-btn {
+  background: var(--pink-light);
+  color: #7a0040;
+}
+
+.buy-btn {
+  background: var(--pink-brand);
+}
+
+.buy-btn:hover,
+.rent-btn:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+/* ------------------------------------------------------------ */
+/*  CONTACT FORM                                                 */
+/* ------------------------------------------------------------ */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  max-width: 450px;
+  margin: auto;
+}
+
+input,
+textarea {
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 2px solid #ffcde1;
+  background: #fff9fc;
+}
+
+button {
+  padding: 0.8rem;
+  border: none;
+  background: var(--pink-brand);
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: var(--pink-accent);
+  transform: translateY(-3px);
+}
+
+/* ------------------------------------------------------------ */
+/*  PAGE TITLES + FOOTER                                         */
+/* ------------------------------------------------------------ */
+.page-title {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--pink-brand);
+}
+
+footer {
+  background: var(--pink-brand);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  box-shadow: 0 -3px 10px var(--shadow-soft);
+}
